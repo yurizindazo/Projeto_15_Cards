@@ -1,0 +1,50 @@
+[
+    {
+        "id": "d3b09434-0c4b-4afb-98b6-ea81fbe47357",
+        "materia": "Programação",
+        "tema": "Python",
+        "data": "30/10/2026 10:55",
+        "cards": [
+            {
+                "pergunta": "Qual é a diferença entre listas e tuplas em Python?",
+                "resposta": "Listas são mutáveis, ou seja, seus elementos podem ser alterados, adicionados ou removidos após a criação. Tuplas são imutáveis; uma vez criadas, seus elementos não podem ser modificados. Por isso, tuplas são usadas quando se deseja garantir que os dados não serão alterados, enquanto listas são usadas quando a coleção precisa ser modificada."
+            },
+            {
+                "pergunta": "Como declarar e chamar uma função que recebe dois parâmetros e retorna a soma deles?",
+                "resposta": "Define‑se a função com a palavra‑chave def, especificando os parâmetros entre parênteses. Dentro da função usa‑se a instrução return para devolver o resultado. Exemplo:\n```python\ndef soma(a, b):\n    return a + b\n\nresultado = soma(3, 5)  # resultado vale 8\n```"
+            },
+            {
+                "pergunta": "O que é uma compreensão de lista (list comprehension) e como ela pode ser usada para gerar uma lista com os quadrados dos números de 1 a 10?",
+                "resposta": "É uma sintaxe compacta para criar listas a partir de iteráveis, aplicando expressões e filtros. Exemplo para gerar os quadrados:\n```python\nquadrados = [x**2 for x in range(1, 11)]\n# quadrados = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n```"
+            },
+            {
+                "pergunta": "Explique a diferença entre os operadores ‘==’ e ‘is’ em Python.",
+                "resposta": "O operador ‘==’ compara o valor dos objetos, verificando se são iguais. O operador ‘is’ verifica se duas variáveis apontam para o mesmo objeto na memória (identidade). Por exemplo, duas strings com o mesmo conteúdo podem ser iguais (==) mas não serem o mesmo objeto (is)."
+            },
+            {
+                "pergunta": "Como tratar exceções em Python usando blocos try/except?",
+                "resposta": "Envolve‑se o código que pode gerar erro dentro de um bloco try e captura‑se a exceção no bloco except. Opcionalmente, pode‑se usar else (executado se não houver exceção) e finally (executado sempre). Exemplo:\n```python\ntry:\n    valor = int(input('Digite um número: '))\nexcept ValueError:\n    print('Entrada inválida!')\nelse:\n    print('Você digitou', valor)\nfinally:\n    print('Fim do processamento')\n```"
+            },
+            {
+                "pergunta": "O que são *decorators* e como criar um decorator simples que registra a execução de uma função?",
+                "resposta": "Decorators são funções que recebem outra função como argumento e retornam uma nova função, permitindo modificar ou estender o comportamento original. Exemplo de decorator de registro:\n```python\ndef registra(func):\n    def wrapper(*args, **kwargs):\n        print(f'Chamando {func.__name__}')\n        return func(*args, **kwargs)\n    return wrapper\n\n@registra\ndef saudacao(nome):\n    print(f'Olá, {nome}!')\n\nsaudacao('Ana')  # Saída: Chamando saudacao\\nOlá, Ana!\n```"
+            },
+            {
+                "pergunta": "Como abrir, ler e fechar um arquivo de texto em Python de forma segura?",
+                "resposta": "Usa‑se a instrução with, que garante o fechamento automático do arquivo mesmo em caso de erro. Exemplo:\n```python\nwith open('dados.txt', 'r', encoding='utf-8') as arquivo:\n    conteudo = arquivo.read()\n# o arquivo já está fechado aqui\n```"
+            },
+            {
+                "pergunta": "Qual é a finalidade do módulo ‘json’ e como converter um dicionário Python em uma string JSON?",
+                "resposta": "O módulo json permite serializar objetos Python em formato JSON (texto) e desserializar JSON em objetos Python. Para converter um dicionário em string JSON usa‑se json.dumps:\n```python\nimport json\ndados = {'nome': 'Carlos', 'idade': 30}\njson_str = json.dumps(dados, ensure_ascii=False)\n# json_str = '{\"nome\": \"Carlos\", \"idade\": 30}'\n```"
+            },
+            {
+                "pergunta": "Descreva o que são *generators* e forneça um exemplo de generator que produz os números pares até 20.",
+                "resposta": "Generators são funções que utilizam a palavra‑chave yield para produzir valores sequencialmente, mantendo seu estado entre as chamadas. Eles são eficientes em memória porque geram itens sob demanda. Exemplo:\n```python\ndef pares_ate_20():\n    n = 0\n    while n <= 20:\n        yield n\n        n += 2\n\nfor numero in pares_ate_20():\n    print(numero)\n```"
+            },
+            {
+                "pergunta": "Como usar *list slicing* para obter os três últimos elementos de uma lista chamada ‘lista’?",
+                "resposta": "Utiliza‑se a sintaxe de fatiamento com índices negativos. Exemplo:\n```python\nultimos_tres = lista[-3:]\n# Se lista = [1,2,3,4,5,6], ultimos_tres será [4,5,6]\n```"
+            }
+        ]
+    }
+]
